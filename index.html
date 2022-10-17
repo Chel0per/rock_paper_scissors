@@ -10,7 +10,15 @@
     <script>
         function getcomputerchoice() {
             let random = Math.floor(Math.random() * 3); 
-            return random;
+            if (random == 0) {
+                return "Rock";
+            }
+            else if (random == 1) {
+                return "Paper";
+            }
+            else {
+                return "Cisors";
+            }
         }
 
 
