@@ -45,6 +45,11 @@
 
             playerselection = capitalize(playerselection);
 
+            while (playerselection != "Rock" && playerselection != "Paper" && playerselection != "Scissors"){
+            playerselection = prompt("Invalid text(type rock,paper or scissors)");
+            playerselection = capitalize(playerselection);
+            }
+
             function playround(a,b) {
                 if (a == b){
                     return 0;
@@ -77,7 +82,7 @@
             console.log("Victory");
         }
         if (j == 5){
-            consolee.log("Defeat");
+            console.log("Defeat");
         }
         
      
