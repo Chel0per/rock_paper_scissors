@@ -5,87 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style src="style.css"></style>
 </head>
 <body>
-    <script>    
+    <div class="header"> Rock Paper Scissors</div>
+
+    <div class="gamecontent">
+        <div class="battle">
+            <div class="playerknight"></div>
+            <div class="computerknight"></div>
+        </div>
+
+        <div class="description">
+            Text
+        </div>
         
-        let i = 0;
-        let j = 0;
+        <div class="selections">
+            <div class="playerselection">
+                <div class="buttons">
+                    <button class="rock">✊</button>
+                    <button class="paper">✋</button>
+                    <button class="scissors">✌️</button>
+                </div>
+                <div class="subtext">Player</div>
+            </div>
+
+            <div class="computerselection">
+                <div class="buttons">
+                    <div class="crock">✊</div>
+                    <div class="cpaper">✋</div>
+                    <div class="cscissors">✌️</div>
+                </div>
+                <div class="subtext">Computer</div>
+            </div>  
+        </div>
         
-        while(i < 5 && j < 5){
+        <div class="score">
+            <div class="up">
+                <div class="pscore">0</div>
+                <div class="cscore">0</div>    
+            </div>
+            <div class="down"><strong>SCORE</strong></div>
 
-            function getcomputerchoice() {
-                let random = Math.floor(Math.random() * 3); 
-                if (random == 0) {
-                    return "Rock";
-                }
-                else if (random == 1) {
-                    return "Paper";
-                }
-                else {
-                    return "Scissors";
-                }
-            }
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p class="copyright"> 
+            Copyright © 2022 Chel0per 
+        </p>
+    </div>
+        
 
-            let computerselection = getcomputerchoice();
-
-            let playerselection = prompt("Select between rock, paper and scissors");
-
-            function capitalize(text) {
-
-                let first = text.substring(0, 1);
-                let rest = text.substring(1);
-                let Up = first.toUpperCase();
-                let Low = rest.toLowerCase();
-                let answer = Up + Low;
-
-                return answer;
-
-            }
-
-            playerselection = capitalize(playerselection);
-
-            while (playerselection != "Rock" && playerselection != "Paper" && playerselection != "Scissors"){
-            playerselection = prompt("Invalid text(type rock,paper or scissors)");
-            playerselection = capitalize(playerselection);
-            }
-
-            function playround(a,b) {
-                if (a == b){
-                    return 0;
-                }
-                else if (a == "Rock" && b == "Scissors" || a == "Paper" && b == "Rock"|| a == "Scissors" && b == "Paper" ){
-                    return 1;
-                }
-                else {
-                    return 2;
-                }
-            }
-
-            let result = playround(playerselection,computerselection);
-
-            
-            if (result == 0){
-                console.log("Tie");
-            }
-            else if (result == 1){
-                i++;
-                console.log("Player Wins");
-            }
-            else if (result == 2){
-                j++;
-                console.log("Computer Wins");
-            }
-        }
-
-        if (i == 5){
-            console.log("Victory");
-        }
-        if (j == 5){
-            console.log("Defeat");
-        }
         
      
-    </script>
+    <script src = "scrsaipt.js"></script>
 </body>
 </html>
