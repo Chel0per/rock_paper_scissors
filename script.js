@@ -1,7 +1,7 @@
 let i = 0;
 let j = 0;
-
-while(i < 5 && j < 5){
+// const playerrounds = document.querySelector("p");
+// const computerrounds = document.querySelector("c");
 
     function getcomputerchoice() {
         let random = Math.floor(Math.random() * 3); 
@@ -16,56 +16,39 @@ while(i < 5 && j < 5){
         }
     }
 
-    let computerselection = getcomputerchoice();
-
-    let playerselection = prompt("Select between rock, paper and scissors");
-
-    function capitalize(text) {
-
-        let first = text.substring(0, 1);
-        let rest = text.substring(1);
-        let Up = first.toUpperCase();
-        let Low = rest.toLowerCase();
-        let answer = Up + Low;
-
-        return answer;
-
-    }
-
-    playerselection = capitalize(playerselection);
-
-    while (playerselection != "Rock" && playerselection != "Paper" && playerselection != "Scissors"){
-    playerselection = prompt("Invalid text(type rock,paper or scissors)");
-    playerselection = capitalize(playerselection);
-    }
-
     function playround(a,b) {
         if (a == b){
-            return 0;
+            document.querySelector(".description").textContent = "It's a tie";
         }
         else if (a == "Rock" && b == "Scissors" || a == "Paper" && b == "Rock"|| a == "Scissors" && b == "Paper" ){
-            return 1;
+            i++;
+            document.querySelector(".scorep").textContent = "SCORE:" + i.toString();
+            if (i == 5){
+                document.querySelector(".description").textContent = "Victory!";
+                i = 0;
+                j = 0;
+                document.querySelector(".scorec").textContent = "SCORE:0"
+                document.querySelector(".scorep").textContent = "SCORE:0"
+            }
+            else {
+                document.querySelector(".description").textContent = a + " beats " + b + " you win";
+            }
         }
         else {
-            return 2;
+            j++;
+            document.querySelector(".scorec").textContent = "SCORE:" + j.toString();
+            if (j == 5){
+                document.querySelector(".description").textContent = "Defeat!";
+                i = 0;
+                j = 0;
+                document.querySelector(".scorec").textContent = "SCORE:0"
+                document.querySelector(".scorep").textContent = "SCORE:0"
+            }
+            else {
+                document.querySelector(".description").textContent = b + " beats " + a + " you lose"; 
+            }
         }
     }
-
-    let result = playround(playerselection,computerselection);
-
-    
-    if (result == 0){
-        console.log("Tie");
-    }
-    else if (result == 1){
-        i++;
-        console.log("Player Wins");
-    }
-    else if (result == 2){
-        j++;
-        console.log("Computer Wins");
-    }
-}
 
 if (i == 5){
     console.log("Victory");

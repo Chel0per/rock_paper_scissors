@@ -23,12 +23,12 @@
         <div class="selections">
             <div class="playerselection">
                 <div class="buttons">
-                    <button class="rock"><span class = reverse>✊</span></button>
-                    <button class="paper"><span class = reverse>✋</span></button>
-                    <button class="scissors"><span class = reverse>✌️</span></button>
+                    <button onclick = 'playround("Rock",getcomputerchoice())' class="rock"><span class = reverse>✊</span></button>
+                    <button onclick = 'playround("Paper",getcomputerchoice())' class="paper"><span class = reverse>✋</span></button>
+                    <button onclick = 'playround("Scissors",getcomputerchoice())' class="scissors"><span class = reverse>✌️</span></button>
                 </div>
                 <div class="subtext">Player</div>
-                <p class = "score"><strong>SCORE:0</strong></p> 
+                <p class = "scorep"><strong>SCORE:0</strong></p> 
             </div>
 
             <div class="computerselection">
@@ -38,7 +38,7 @@
                     <div class="cbutton cscissors">✌️</div>
                 </div>
                 <div class="subtext">Computer</div>
-                <p class = "score"><strong>SCORE:0 </strong></p> 
+                <p class = "scorec"><strong>SCORE:0 </strong></p> 
 
             </div>  
         </div>
@@ -54,6 +54,6 @@
 
         
      
-    <!-- <script src = "script.js"></script> -->
+    <script src = "script.js"></script>
 </body>
 </html>
