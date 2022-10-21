@@ -1,0 +1,188 @@
+@font-face {
+    font-family: "streetExplorer";
+    src: url(fonts/StreetExplorer-X3Y9Z.otf);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color:#5FA8D3;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header {
+    font-family: "streetExplorer";
+    font-size: 48px;
+    background-color: #23395B;
+    color: #FFFC31;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+.gamecontent {
+    background-color: #5FA8D3;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.battle {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    padding-top: 48px;
+    gap: 36px;
+}
+
+.playerknight {
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    background-color: #F6F7EB;
+    border-radius: 50%;
+    border: #FFFC31 solid 6px ;
+}
+
+.computerknight {
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    background-color: #F6F7EB;
+    border-radius: 50%;
+    border: #FFFC31 solid 6px ;
+}
+
+.description {
+    text-align: center;
+    color: #FFFC31;
+    padding: 16px;
+    padding-top: 0;
+    font-size: 24px;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+}
+
+.playerselection {
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.computerselection {
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.buttons {
+   display: flex;
+   gap: 16px;
+
+}
+
+.cbuttons {
+    display: flex;
+    gap: 16px;
+}
+ 
+.rock, .paper, .scissors { 
+    
+    width: 120px;
+    height: 120px;
+    background-color:#5FA8D3;
+    border-radius: 50%;
+    border: #FFFC31 solid 6px ;
+    font-size: 48px;
+}
+
+.rock {
+    padding-bottom: 12px;
+}
+
+.paper {
+    padding-right: 12px;
+    padding-bottom: 8px;
+}
+
+.scissors {
+    padding-bottom: 8px;
+}
+
+
+
+
+
+
+.crock, .cpaper, .cscissors { 
+    
+    box-sizing: border-box;
+    height: 120px;
+    width: 120px;
+    background-color:#5FA8D3;
+    border-radius: 50%;
+    border: #FFFC31 solid 6px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+
+}
+
+.crock {
+    padding-bottom: 12px;
+}
+
+.cpaper {
+    padding-left: 12px;
+    padding-bottom: 8px;
+}
+
+.cscissors {
+    padding-bottom: 8px;
+}
+
+.subtext {
+    color:#FFFC31;
+    font-weight: bold;
+    font-size: 18.9px;
+
+}
+
+.score {
+
+    color: #FFFC31;
+
+}
+
+.copyright {
+    background-color: #23395B;
+    color: #FFFC31;
+    margin: 0;
+    text-align: center;
+    padding: 16px;
+}
+
+span{
+    display: Inline-block;
+  }
+
+  .reverse{                 
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
