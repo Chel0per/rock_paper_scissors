@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header"> Rock Paper Scissors</div>
@@ -23,31 +23,26 @@
         <div class="selections">
             <div class="playerselection">
                 <div class="buttons">
-                    <button class="rock">✊</button>
-                    <button class="paper">✋</button>
-                    <button class="scissors">✌️</button>
+                    <button class="rock"><span class = reverse>✊</span></button>
+                    <button class="paper"><span class = reverse>✋</span></button>
+                    <button class="scissors"><span class = reverse>✌️</span></button>
                 </div>
                 <div class="subtext">Player</div>
+                <p class = "score"><strong>SCORE:0</strong></p> 
             </div>
 
             <div class="computerselection">
-                <div class="buttons">
-                    <div class="crock">✊</div>
-                    <div class="cpaper">✋</div>
-                    <div class="cscissors">✌️</div>
+                <div class="cbuttons">
+                    <div class="cbutton crock">✊</div>
+                    <div class="cbutton cpaper">✋</div>
+                    <div class="cbutton cscissors">✌️</div>
                 </div>
                 <div class="subtext">Computer</div>
+                <p class = "score"><strong>SCORE:0 </strong></p> 
+
             </div>  
         </div>
         
-        <div class="score">
-            <div class="up">
-                <div class="pscore">0</div>
-                <div class="cscore">0</div>    
-            </div>
-            <div class="down"><strong>SCORE</strong></div>
-
-        </div>
     </div>
     
     <div class="footer">
