@@ -1,7 +1,7 @@
 let i = 0;
 let j = 0;
-// const playerrounds = document.querySelector("p");
-// const computerrounds = document.querySelector("c");
+
+
 
     function getcomputerchoice() {
         let random = Math.floor(Math.random() * 3); 
@@ -17,6 +17,47 @@ let j = 0;
     }
 
     function playround(a,b) {
+        
+        switch(a){
+            case "Rock":
+            document.querySelector(".reverse1").textContent = "✊";
+            document.querySelector(".playerknight").style.backgroundColor = "#5FA8D3";
+            document.querySelector(".reverse1").style.padding = "0 0 12px 0";
+            break;
+
+            case "Paper":
+            document.querySelector(".reverse1").textContent = "✋";
+            document.querySelector(".playerknight").style.backgroundColor = "#5FA8D3";
+            document.querySelector(".reverse1").style.padding = "0 0 8px 10px";
+            break; 
+            
+            case "Scissors":
+            document.querySelector(".reverse1").textContent = "✌️";
+            document.querySelector(".playerknight").style.backgroundColor = "#5FA8D3";
+            document.querySelector(".reverse1").style.padding = "0 0 8px 0";
+            break; 
+        }
+
+        switch(b){
+            case "Rock":
+            document.querySelector(".computerknight").textContent = "✊";
+            document.querySelector(".computerknight").style.backgroundColor = "#5FA8D3";
+            document.querySelector(".computerknight").style.padding = "0 0 12px 0";
+            break;
+
+            case "Paper":
+            document.querySelector(".computerknight").textContent = "✋";
+            document.querySelector(".computerknight").style.backgroundColor = "#5FA8D3";
+            document.querySelector(".computerknight").style.padding = "0 0 8px 12px";
+            break; 
+            
+            case "Scissors":
+            document.querySelector(".computerknight").textContent = "✌️";
+            document.querySelector(".computerknight").style.backgroundColor = "#5FA8D3";
+            document.querySelector(".computerknight").style.padding = "0 0 8px 0";
+            break; 
+        }
+        
         if (a == b){
             document.querySelector(".description").textContent = "It's a tie";
         }
