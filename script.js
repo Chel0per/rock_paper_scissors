@@ -1,99 +1,444 @@
 let i = 0;
 let j = 0;
+let k = 0;
 
 
 
-    function getcomputerchoice() {
-        let random = Math.floor(Math.random() * 3); 
-        if (random == 0) {
-            return "Rock";
-        }
-        else if (random == 1) {
-            return "Paper";
-        }
-        else {
-            return "Scissors";
-        }
+function getcomputerchoice() {
+    let random = Math.floor(Math.random() * 3); 
+    
+    if (random == 0) {
+        return "Rock";
     }
+    else if (random == 1) {
+        return "Paper";
+    }
+    else {
+        return "Scissors";
+    }
+}
 
-    function playround(a,b) {
+function playround(player,computer) {
         
-        switch(a){
-            case "Rock":
-            document.querySelector(".reverse1").textContent = "✊";
-            document.querySelector(".playerknight").style.backgroundColor = "#5FA8D3";
-            document.querySelector(".reverse1").style.padding = "0 0 12px 0";
-            break;
+    if (player == "Paper" && computer == "Rock"){
 
-            case "Paper":
-            document.querySelector(".reverse1").textContent = "✋";
-            document.querySelector(".playerknight").style.backgroundColor = "#5FA8D3";
-            document.querySelector(".reverse1").style.padding = "0 0 8px 10px";
-            break; 
-            
-            case "Scissors":
-            document.querySelector(".reverse1").textContent = "✌️";
-            document.querySelector(".playerknight").style.backgroundColor = "#5FA8D3";
-            document.querySelector(".reverse1").style.padding = "0 0 8px 0";
-            break; 
-        }
+        document.querySelector(".player").textContent="✋";
+        document.querySelector(".player").style.padding = "0 0 8px 7px";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
 
-        switch(b){
-            case "Rock":
-            document.querySelector(".computerknight").textContent = "✊";
-            document.querySelector(".computerknight").style.backgroundColor = "#5FA8D3";
-            document.querySelector(".computerknight").style.padding = "0 0 12px 0";
-            break;
-
-            case "Paper":
-            document.querySelector(".computerknight").textContent = "✋";
-            document.querySelector(".computerknight").style.backgroundColor = "#5FA8D3";
-            document.querySelector(".computerknight").style.padding = "0 0 8px 12px";
-            break; 
-            
-            case "Scissors":
-            document.querySelector(".computerknight").textContent = "✌️";
-            document.querySelector(".computerknight").style.backgroundColor = "#5FA8D3";
-            document.querySelector(".computerknight").style.padding = "0 0 8px 0";
-            break; 
-        }
-        
-        if (a == b){
-            document.querySelector(".description").textContent = "It's a tie";
-        }
-        else if (a == "Rock" && b == "Scissors" || a == "Paper" && b == "Rock"|| a == "Scissors" && b == "Paper" ){
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
             i++;
-            document.querySelector(".scorep").textContent = "SCORE:" + i.toString();
-            if (i == 5){
-                document.querySelector(".description").textContent = "Victory!";
-                i = 0;
-                j = 0;
-                document.querySelector(".scorec").textContent = "SCORE:0"
-                document.querySelector(".scorep").textContent = "SCORE:0"
-            }
-            else {
-                document.querySelector(".description").textContent = a + " beats " + b + " you win";
-            }
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✊";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#E94F37";
+                document.querySelector(".player").style.backgroundColor = "#5FAD41";
+
+            }, 1000)
         }
+
         else {
-            j++;
-            document.querySelector(".scorec").textContent = "SCORE:" + j.toString();
-            if (j == 5){
-                document.querySelector(".description").textContent = "Defeat!";
-                i = 0;
-                j = 0;
-                document.querySelector(".scorec").textContent = "SCORE:0"
-                document.querySelector(".scorep").textContent = "SCORE:0"
-            }
-            else {
-                document.querySelector(".description").textContent = b + " beats " + a + " you lose"; 
-            }
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✊";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#E94F37";
+                document.querySelector(".player").style.backgroundColor = "#5FAD41";
+            }, 1000)
+
         }
     }
 
-if (i == 5){
-    console.log("Victory");
+    else if (player == "Paper" && computer == "Scissors"){
+
+        document.querySelector(".player").textContent="✋";
+        document.querySelector(".player").style.padding = "0 0 8px 7px";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            j++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✌️";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#5FAD41";
+                document.querySelector(".player").style.backgroundColor = "#E94F37";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✌️";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#5FAD41";
+                document.querySelector(".player").style.backgroundColor = "#E94F37";
+            }, 1000)
+
+        }
+    }
+
+    else if (player == "Paper" && computer == "Paper"){
+
+        document.querySelector(".player").textContent="✋";
+        document.querySelector(".player").style.padding = "0 0 8px 7px";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✋";
+                document.querySelector(".computer").style.padding = "0 0 8px 10px";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✋";
+                document.querySelector(".computer").style.padding = "0 0 8px 10px";
+            }, 1000)
+
+        }
+    }
+
+    else if(player == "Rock" && computer == "Paper"){
+        document.querySelector(".player").textContent="✊";
+        document.querySelector(".player").style.padding = "0 0 8px 0";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            j++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✋";
+                document.querySelector(".computer").style.padding = "0 0 8px 10px";
+                document.querySelector(".computer").style.backgroundColor = "#5FAD41";
+                document.querySelector(".player").style.backgroundColor = "#E94F37";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✋";
+                document.querySelector(".computer").style.padding = "0 0 8px 10px";
+                document.querySelector(".computer").style.backgroundColor = "#5FAD41";
+                document.querySelector(".player").style.backgroundColor = "#E94F37";
+            }, 1000)
+
+        }    
+    }
+
+    else if(player == "Rock" && computer == "Scissors"){
+        document.querySelector(".player").textContent="✊";
+        document.querySelector(".player").style.padding = "0 0 8px 0";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            i++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✌️";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#E94F37";
+                document.querySelector(".player").style.backgroundColor = "#5FAD41";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✌️";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#E94F37";
+                document.querySelector(".player").style.backgroundColor = "#5FAD41";
+            }, 1000)
+
+        }    
+    }
+
+    else if(player == "Rock" && computer == "Rock"){
+        document.querySelector(".player").textContent="✊";
+        document.querySelector(".player").style.padding = "0 0 8px 0";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✊";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✊";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+            }, 1000)
+
+        }    
+    }
+
+    else if(player == "Scissors" && computer == "Paper"){
+        document.querySelector(".player").textContent="✌️";
+        document.querySelector(".player").style.padding = "0 0 8px 0";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            i++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✋";
+                document.querySelector(".computer").style.padding = "0 0 8px 10px";
+                document.querySelector(".computer").style.backgroundColor = "#E94F37";
+                document.querySelector(".player").style.backgroundColor = "#5FAD41";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✋";
+                document.querySelector(".computer").style.padding = "0 0 8px 10px";
+                document.querySelector(".computer").style.backgroundColor = "#E94F37";
+                document.querySelector(".player").style.backgroundColor = "#5FAD41";
+            }, 1000)
+
+        }    
+    }
+
+    else if(player == "Scissors" && computer == "Rock"){
+        document.querySelector(".player").textContent="✌️";
+        document.querySelector(".player").style.padding = "0 0 8px 0";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            j++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✊";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#5FAD41";
+                document.querySelector(".player").style.backgroundColor = "#E94F37";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✊";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+                document.querySelector(".computer").style.backgroundColor = "#5FAD41";
+                document.querySelector(".player").style.backgroundColor = "#E94F37";
+            }, 1000)
+
+        }    
+    }
+
+    else if(player == "Scissors" && computer == "Scissors"){
+        document.querySelector(".player").textContent="✌️";
+        document.querySelector(".player").style.padding = "0 0 8px 0";
+        document.querySelector(".player").style.backgroundColor = "#5FA8D3";
+        document.querySelector(".computer").textContent="💻";
+        document.querySelector(".computer").style.padding = "0 0 8px 0";
+        document.querySelector(".computer").style.backgroundColor = "#5FA8D3";
+
+        if(k < 1){
+            document.querySelector(".battle").style.animationPlayState="running";
+            document.querySelector(".player").style.animationPlayState="running";
+            document.querySelector(".computer").style.animationPlayState="running";
+            k++;
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✌️";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+            }, 1000)
+        }
+
+        else {
+            document.querySelector(".battle").style.animationName="none";
+            document.querySelector(".player").style.animationName="none";
+            document.querySelector(".computer").style.animationName="none";
+
+            requestAnimationFrame(() => {
+                document.querySelector(".battle").style.animationName="" ; 
+            });
+            
+            requestAnimationFrame(() => {
+                document.querySelector(".player").style.animationName="" ; 
+            });
+            requestAnimationFrame(() => {
+                document.querySelector(".computer").style.animationName="" ; 
+            });
+
+            setTimeout(() => {
+                document.querySelector(".computer").textContent="✌️";
+                document.querySelector(".computer").style.padding = "0 0 8px 0";
+            }, 1000)
+
+        }    
+    }
 }
-if (j == 5){
-    console.log("Defeat");
-}
+
